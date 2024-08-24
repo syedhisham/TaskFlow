@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/welcomePage.css'; // Import the CSS file for styling
+import '../styles/welcomePage.css'; 
 import WelcomPageImage from '../assets/TodoAppImg1.png';
 import HomePageContent from '../components/HomePageContent';
 
@@ -12,7 +12,7 @@ function WelcomePage() {
     setIsTransitioning(true);
     setTimeout(() => {
       navigate('/home');
-    }, 500); // Duration of the transition effect
+    }, 500); 
   };
 
   return (

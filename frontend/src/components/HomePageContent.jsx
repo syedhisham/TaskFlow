@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/homePageContent.css';
-import { motion } from 'framer-motion';
-import CountUp from 'react-countup';
-import { useInView } from 'react-intersection-observer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import React, { useState, useEffect } from "react";
+import "../styles/homePageContent.css";
+import { motion } from "framer-motion";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -14,7 +14,7 @@ const cardVariants = {
 const HomePageContent = () => {
   const { ref: achievementsRef, inView: achievementsInView } = useInView({
     triggerOnce: true, // Animation happens only once
-    threshold: 0.5,    // 50% of the section needs to be visible
+    threshold: 0.5, // 50% of the section needs to be visible
   });
 
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -28,12 +28,12 @@ const HomePageContent = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -57,7 +57,9 @@ const HomePageContent = () => {
           >
             <h2 className="card-title">Task Management</h2>
             <p className="card-content">
-              Efficiently organize your tasks with TaskFlow’s intuitive task management system. Create, categorize, and prioritize tasks to stay on top of your responsibilities.
+              Efficiently organize your tasks with TaskFlow’s intuitive task
+              management system. Create, categorize, and prioritize tasks to
+              stay on top of your responsibilities.
             </p>
           </motion.div>
 
@@ -69,7 +71,8 @@ const HomePageContent = () => {
           >
             <h2 className="card-title">Deadline Reminders</h2>
             <p className="card-content">
-              Never miss a deadline again. Set reminders for upcoming deadlines and receive timely notifications to ensure you stay on track.
+              Never miss a deadline again. Set reminders for upcoming deadlines
+              and receive timely notifications to ensure you stay on track.
             </p>
           </motion.div>
 
@@ -81,7 +84,9 @@ const HomePageContent = () => {
           >
             <h2 className="card-title">Collaborative Lists</h2>
             <p className="card-content">
-              Work seamlessly with others by sharing task lists. Assign tasks, track progress, and collaborate effectively with your team or family.
+              Work seamlessly with others by sharing task lists. Assign tasks,
+              track progress, and collaborate effectively with your team or
+              family.
             </p>
           </motion.div>
 
@@ -93,7 +98,8 @@ const HomePageContent = () => {
           >
             <h2 className="card-title">Progress Tracking</h2>
             <p className="card-content">
-              Monitor your progress with visual indicators and detailed reports. Track completed tasks and overall productivity to stay motivated.
+              Monitor your progress with visual indicators and detailed reports.
+              Track completed tasks and overall productivity to stay motivated.
             </p>
           </motion.div>
 
@@ -105,7 +111,9 @@ const HomePageContent = () => {
           >
             <h2 className="card-title">Customizable Interface</h2>
             <p className="card-content">
-              Tailor your TaskFlow experience to fit your needs. Customize themes, layouts, and notifications to match your personal workflow.
+              Tailor your TaskFlow experience to fit your needs. Customize
+              themes, layouts, and notifications to match your personal
+              workflow.
             </p>
           </motion.div>
 
@@ -117,7 +125,9 @@ const HomePageContent = () => {
           >
             <h2 className="card-title">Cross-Platform Sync</h2>
             <p className="card-content">
-              Access your tasks from any device with TaskFlow’s cross-platform synchronization. Stay updated with real-time changes across all your devices.
+              Access your tasks from any device with TaskFlow’s cross-platform
+              synchronization. Stay updated with real-time changes across all
+              your devices.
             </p>
           </motion.div>
         </div>
@@ -133,9 +143,12 @@ const HomePageContent = () => {
               whileInView="visible"
             >
               <p className="testimonial-text">
-                "TaskFlow has revolutionized the way we manage our projects. The interface is intuitive and the features are incredibly helpful."
+                "TaskFlow has revolutionized the way we manage our projects. The
+                interface is intuitive and the features are incredibly helpful."
               </p>
-              <span className="testimonial-author">Jane Doe, Project Manager</span>
+              <span className="testimonial-author">
+                Jane Doe, Project Manager
+              </span>
             </motion.div>
 
             <motion.div
@@ -145,9 +158,13 @@ const HomePageContent = () => {
               whileInView="visible"
             >
               <p className="testimonial-text">
-                "With TaskFlow, staying organized has never been easier. The deadline reminders and collaborative features are a game-changer."
+                "With TaskFlow, staying organized has never been easier. The
+                deadline reminders and collaborative features are a
+                game-changer."
               </p>
-              <span className="testimonial-author">John Smith, Freelance Developer</span>
+              <span className="testimonial-author">
+                John Smith, Freelance Developer
+              </span>
             </motion.div>
 
             <motion.div
@@ -157,9 +174,13 @@ const HomePageContent = () => {
               whileInView="visible"
             >
               <p className="testimonial-text">
-                "The customizable interface of TaskFlow allows me to tailor the app to my workflow. I couldn’t ask for a better task management tool."
+                "The customizable interface of TaskFlow allows me to tailor the
+                app to my workflow. I couldn’t ask for a better task management
+                tool."
               </p>
-              <span className="testimonial-author">Emily Johnson, Entrepreneur</span>
+              <span className="testimonial-author">
+                Emily Johnson, Entrepreneur
+              </span>
             </motion.div>
           </div>
         </section>
@@ -169,7 +190,11 @@ const HomePageContent = () => {
           <h2 className="section-title">Our Achievements</h2>
           <div className="achievements-grid">
             <div className="achievement">
-              <img src="path/to/your/graphic1.png" alt="Achievement 1" className="achievement-icon" />
+              <img
+                src="path/to/your/graphic1.png"
+                alt="Achievement 1"
+                className="achievement-icon"
+              />
               <h3 className="achievement-title">
                 {achievementsInView && (
                   <CountUp end={100000} prefix="+" duration={2} />
@@ -177,12 +202,17 @@ const HomePageContent = () => {
                 <span> Users</span>
               </h3>
               <p className="achievement-description">
-                Join a thriving community of over 100,000 users who trust TaskFlow for their task management needs.
+                Join a thriving community of over 100,000 users who trust
+                TaskFlow for their task management needs.
               </p>
             </div>
 
             <div className="achievement">
-              <img src="path/to/your/graphic2.png" alt="Achievement 2" className="achievement-icon" />
+              <img
+                src="path/to/your/graphic2.png"
+                alt="Achievement 2"
+                className="achievement-icon"
+              />
               <h3 className="achievement-title">
                 {achievementsInView && (
                   <CountUp end={1000000} prefix="+" duration={2} />
@@ -190,15 +220,21 @@ const HomePageContent = () => {
                 <span> Tasks Completed</span>
               </h3>
               <p className="achievement-description">
-                Celebrate the completion of over 1 million tasks managed efficiently through TaskFlow.
+                Celebrate the completion of over 1 million tasks managed
+                efficiently through TaskFlow.
               </p>
             </div>
 
             <div className="achievement">
-              <img src="path/to/your/graphic3.png" alt="Achievement 3" className="achievement-icon" />
+              <img
+                src="path/to/your/graphic3.png"
+                alt="Achievement 3"
+                className="achievement-icon"
+              />
               <h3 className="achievement-title">Top Rated on App Stores</h3>
               <p className="achievement-description">
-                Recognized as one of the top task management apps on major app stores with stellar user ratings.
+                Recognized as one of the top task management apps on major app
+                stores with stellar user ratings.
               </p>
             </div>
           </div>

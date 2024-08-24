@@ -1,8 +1,6 @@
-// controllers/eventController.js
+
 const Event = require('../models/Event');
 
-// @desc Create a new event
-// @route POST /api/events
 exports.createEvent = async (req, res) => {
   try {
     const { title, start, end } = req.body;
@@ -20,8 +18,7 @@ exports.createEvent = async (req, res) => {
   }
 };
 
-// @desc Get all events
-// @route GET /api/events
+
 exports.getEvents = async (req, res) => {
   try {
     const events = await Event.find();

@@ -1,4 +1,10 @@
-.edit-task-page {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .create-task-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,7 +17,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .edit-task-page h1 {
+  h1 {
     font-size: 2rem;
     color: #fff;
     margin-bottom: 20px;
@@ -24,9 +30,44 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .avatar-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+  
+  .avatar-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #f9f9f9;
+    border: 2px dashed #ddd;
+    cursor: pointer;
+  }
+  
+  .avatar-placeholder {
+    color: #555;
+    font-size: 0.875rem;
+  }
+  
+  .avatar-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
   }
   
   .form-group {
+    width: 100%;
     margin-bottom: 16px;
   }
   
@@ -37,9 +78,7 @@
     margin-bottom: 8px;
   }
   
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
+  .form-group input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -49,30 +88,29 @@
     transition: border-color 0.3s ease;
   }
   
-  .form-group input:focus,
-  .form-group textarea:focus,
-  .form-group select:focus {
+  .form-group input:focus {
     border-color: #3498db;
     outline: none;
   }
   
-  .form-group textarea {
-    height: 100px;
-    resize: vertical;
+  .error {
+    color: #e74c3c;
+    font-size: 0.75rem;
+    margin-top: 4px;
   }
   
-  .submit-button {
+  .create-task-button {
     background-color: #3498db;
-    color: white;
+    color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
-    font-size: 1rem;
     cursor: pointer;
+    font-size: 0.875rem;
     transition: background-color 0.3s ease;
   }
   
-  .submit-button:hover {
+  .create-task-button:hover {
     background-color: #2980b9;
   }
   

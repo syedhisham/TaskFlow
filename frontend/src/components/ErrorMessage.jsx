@@ -1,6 +1,5 @@
-// src/components/ErrorMessage.jsx
 import React from "react";
-import "../styles/errorMessage.css"; // Create a CSS file for error message styling
+import "../styles/errorMessage.css";
 
 const ErrorMessage = ({ message }) => (
   <div className="error-message">

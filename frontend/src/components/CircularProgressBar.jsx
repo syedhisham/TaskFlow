@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/circularProgressBar.css"; // Import the CSS file for styling
+import "../styles/circularProgressBar.css"; 
 
 const CircularProgressBar = ({ completed, total }) => {
   const percentage = Math.round((completed / total) * 100);
@@ -15,17 +15,17 @@ const CircularProgressBar = ({ completed, total }) => {
         {/* Thick light blue background circle */}
         <circle
           className="progress-ring-circle-bg"
-          stroke="#ADD8E6"  // Light blue color
+          stroke="#ADD8E6"  
           strokeWidth="20"
           fill="transparent"
           r={radius}
           cx="100"
           cy="100"
         />
-        {/* Thin white circle that fills with a gradient */}
+
         <circle
           className="progress-ring-circle"
-          stroke="#fff"  // Start as white
+          stroke="#fff"  
           strokeWidth="10"
           fill="transparent"
           r={radius}
@@ -34,13 +34,7 @@ const CircularProgressBar = ({ completed, total }) => {
           strokeDasharray={strokeDasharray}
           strokeDashoffset={strokeDashoffset}
         />
-        {/* <defs>
-          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="green" />
-            <stop offset="100%" stopColor="darkblue" />
-          </linearGradient>
-        </defs> */}
-        {/* Apply gradient when percentage > 0 */}
+       
         {percentage > 0 && (
           <circle
             className="progress-ring-circle-overlay"
@@ -55,7 +49,6 @@ const CircularProgressBar = ({ completed, total }) => {
           />
         )}
       </svg>
-      {/* Percentage text as a <p> tag positioned absolutely */}
       <p className="progress-percentage">
         {percentage}%
       </p>

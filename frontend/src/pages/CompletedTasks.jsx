@@ -1,5 +1,3 @@
-// src/pages/CompletedTasks.jsx
-
 import React, { useState, useEffect } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
 import Spinner from '../components/Spinner';

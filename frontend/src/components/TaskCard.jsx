@@ -1,5 +1,11 @@
 import React from "react";
-import { FaArrowUp, FaArrowDown, FaEllipsisH, FaTrashAlt, FaEdit } from "react-icons/fa";
+import {
+  FaArrowUp,
+  FaArrowDown,
+  FaEllipsisH,
+  FaTrashAlt,
+  FaEdit,
+} from "react-icons/fa";
 import "../styles/home.css";
 
 function TaskCard({
@@ -88,7 +94,8 @@ function TaskCard({
                   {task.category}
                 </button>
                 <p className="task-date-time">
-                  {new Date(task.date).toLocaleDateString()} | {task.startTime} - {task.endTime}
+                  {new Date(task.date).toLocaleDateString()} | {task.startTime}{" "}
+                  - {task.endTime}
                 </p>
                 <p className="task-description">{task.description}</p>
               </div>
@@ -97,10 +104,7 @@ function TaskCard({
             <p>No tasks available</p>
           )}
           {!atBottom && (
-            <button
-              className="scroll-down-button"
-              onClick={handleScrollDown}
-            >
+            <button className="scroll-down-button" onClick={handleScrollDown}>
               <FaArrowDown />
             </button>
           )}

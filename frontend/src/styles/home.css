@@ -1,8 +1,7 @@
-/* Existing styles */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensure padding and borders are included in element's total width and height */
+  box-sizing: border-box; 
 }
 
 .home-page {
@@ -12,7 +11,6 @@
   scroll-behavior: smooth;
 }
 
-/* Top Navbar */
 .navbar {
   width: 100%;
   display: flex;
@@ -71,7 +69,6 @@
 }
 
 
-/* Content */
 .content {
   flex-grow: 1;
   padding: 20px;
@@ -130,7 +127,7 @@
   display: none;
 }
 
-/* Scroll buttons */
+
 .scroll-down-button {
   position: fixed;
   bottom: 3rem;

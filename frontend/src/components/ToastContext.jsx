@@ -1,13 +1,13 @@
 import React, { createContext, useContext, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { MdError, MdCheckCircle } from "react-icons/md";
 
 const ToastContext = createContext();
 
 export const ToastProvider = ({ children }) => {
   const showToast = (type, message) => {
-    if (type === 'error') {
+    if (type === "error") {
       toast.error(
         <div className="flex items-center">
           <MdError className="text-red-500 mr-2" size={24} />
@@ -31,7 +31,7 @@ export const ToastProvider = ({ children }) => {
           },
         }
       );
-    } else if (type === 'success') {
+    } else if (type === "success") {
       toast.success(
         <div className="flex items-center">
           <MdCheckCircle className="text-green-500 mr-2" size={24} />

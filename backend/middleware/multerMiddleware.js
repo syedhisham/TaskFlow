@@ -10,9 +10,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-console.log('Multer upload instance:', upload);
-console.log(process.env.CLOUDINARY_CLOUD_NAME);
 
 
 
-module.exports = upload; // Correct export statement
+module.exports = upload; 

@@ -246,9 +246,9 @@ function Home() {
           console.error("Error deleting task:", error);
         } finally {
           closeModal();
-          setDeletingTaskId(null); // Reset the deleting task ID
+          setDeletingTaskId(null); 
         }
-      }, 500); // Match the duration of the CSS animation
+      }, 500);
     }
   }, [taskToDelete, tasks]);
   

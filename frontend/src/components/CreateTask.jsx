@@ -1,84 +1,101 @@
-// CreateTask.jsx
-import React, { useState, useEffect } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { FaChevronDown } from 'react-icons/fa';
-import '../styles/createTask.css';
-import ErrorToast from './ErrorToast';
-import SuccessToast from './SuccessToast';
+import React, { useState, useEffect } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FaChevronDown } from "react-icons/fa";
+import "../styles/createTask.css";
+import ErrorToast from "./ErrorToast";
+import SuccessToast from "./SuccessToast";
 
 function CreateTask() {
   const [formData, setFormData] = useState({
-    taskName: '',
-    category: '',
-    date: '',
-    startTime: '09:00 AM',
-    endTime: '10:00 AM',
-    description: '',
+    taskName: "",
+    category: "",
+    date: "",
+    startTime: "09:00 AM",
+    endTime: "10:00 AM",
+    description: "",
   });
-  const { taskName, category, date, startTime, endTime, description } = formData;
+  const { taskName, category, date, startTime, endTime, description } =
+    formData;
 
-  const today = new Date().toISOString().split('T')[0];
+  const today = new Date().toISOString().split("T")[0];
 
   // Set the date from URL parameters if available
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    const preSelectedDate = urlParams.get('date');
+    const preSelectedDate = urlParams.get("date");
     if (preSelectedDate) {
       setFormData((prev) => ({ ...prev, date: preSelectedDate }));
     }
   }, []);
 
   const timeTo24HourFormat = (time) => {
-    const [timePart, period] = time.split(' ');
-    let [hours, minutes] = timePart.split(':').map(Number);
-    if (period === 'PM' && hours < 12) hours += 12;
-    if (period === 'AM' && hours === 12) hours = 0;
+    const [timePart, period] = time.split(" ");
+    let [hours, minutes] = timePart.split(":").map(Number);
+    if (period === "PM" && hours < 12) hours += 12;
+    if (period === "AM" && hours === 12) hours = 0;
     return { hours, minutes };
   };
 
   const handleCreateTask = async () => {
-    if (!taskName || !category || !date || !startTime || !endTime || !description) {
-      ErrorToast('Please fill in all fields');
+    if (
+      !taskName ||
+      !category ||
+      !date ||
+      !startTime ||
+      !endTime ||
+      !description
+    ) {
+      ErrorToast("Please fill in all fields");
       return;
     }
 
-    const { hours: startHours, minutes: startMinutes } = timeTo24HourFormat(startTime);
-    const { hours: endHours, minutes: endMinutes } = timeTo24HourFormat(endTime);
+    const { hours: startHours, minutes: startMinutes } =
+      timeTo24HourFormat(startTime);
+    const { hours: endHours, minutes: endMinutes } =
+      timeTo24HourFormat(endTime);
 
-    const startDateTime = new Date(`${date}T${startHours.toString().padStart(2, '0')}:${startMinutes.toString().padStart(2, '0')}`);
-    const endDateTime = new Date(`${date}T${endHours.toString().padStart(2, '0')}:${endMinutes.toString().padStart(2, '0')}`);
+    const startDateTime = new Date(
+      `${date}T${startHours.toString().padStart(2, "0")}:${startMinutes
+        .toString()
+        .padStart(2, "0")}`
+    );
+    const endDateTime = new Date(
+      `${date}T${endHours.toString().padStart(2, "0")}:${endMinutes
+        .toString()
+        .padStart(2, "0")}`
+    );
 
     if (startDateTime >= endDateTime) {
-      ErrorToast('End time must be after start time');
+      ErrorToast("End time must be after start time");
       return;
     }
 
     if (date < today) {
-      ErrorToast('Date cannot be in the past');
+      ErrorToast("Date cannot be in the past");
       return;
     }
 
     try {
-      await fetch('http://localhost:5000/api/tasks', {
-        method: 'POST',
+      await fetch("http://localhost:5000/api/tasks", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
-      SuccessToast('Task created successfully');
+      SuccessToast("Task created successfully");
       setFormData({
-        taskName: '',
-        category: '',
-        date: '',
-        startTime: '09:00 AM',
-        endTime: '10:00 AM',
-        description: '',
+        taskName: "",
+        category: "",
+        date: "",
+        startTime: "09:00 AM",
+        endTime: "10:00 AM",
+        description: "",
       });
     } catch (err) {
-      toast.error('Error creating task');
+      toast.error("Error creating task");
     }
   };
 
@@ -86,8 +103,12 @@ function CreateTask() {
     const { hours, minutes } = timeTo24HourFormat(time);
     let newHours = hours + 1;
     if (newHours > 12) newHours -= 12;
-    const period = newHours >= 12 ? 'PM' : 'AM';
-    setTime(`${newHours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')} ${period}`);
+    const period = newHours >= 12 ? "PM" : "AM";
+    setTime(
+      `${newHours.toString().padStart(2, "0")}:${minutes
+        .toString()
+        .padStart(2, "0")} ${period}`
+    );
   };
 
   const handleChange = (e) => {
@@ -101,7 +122,7 @@ function CreateTask() {
   const handleCategoryClick = (selectedCategory) => {
     setFormData((prev) => ({
       ...prev,
-      category: selectedCategory === formData.category ? '' : selectedCategory,
+      category: selectedCategory === formData.category ? "" : selectedCategory,
     }));
   };
 
@@ -125,10 +146,19 @@ function CreateTask() {
         <div className="form-group">
           <label>Category:</label>
           <div className="category-buttons">
-            {['Work', 'Personal Development', 'Health & Fitness', 'Household', 'Social', 'Finance'].map((cat) => (
+            {[
+              "Work",
+              "Personal Development",
+              "Health & Fitness",
+              "Household",
+              "Social",
+              "Finance",
+            ].map((cat) => (
               <button
                 key={cat}
-                className={`category-button ${category === cat ? 'selected' : ''}`}
+                className={`category-button ${
+                  category === cat ? "selected" : ""
+                }`}
                 type="button"
                 onClick={() => handleCategoryClick(cat)}
               >
@@ -158,10 +188,22 @@ function CreateTask() {
                 id="startTime"
                 name="startTime"
                 value={startTime}
-                onChange={(e) => setFormData((prev) => ({ ...prev, startTime: e.target.value }))}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    startTime: e.target.value,
+                  }))
+                }
                 required
               />
-              <FaChevronDown className="time-icon" onClick={() => addHours(startTime, (value) => setFormData((prev) => ({ ...prev, startTime: value })))} />
+              <FaChevronDown
+                className="time-icon"
+                onClick={() =>
+                  addHours(startTime, (value) =>
+                    setFormData((prev) => ({ ...prev, startTime: value }))
+                  )
+                }
+              />
             </div>
           </div>
           <div className="time-input">
@@ -172,10 +214,19 @@ function CreateTask() {
                 id="endTime"
                 name="endTime"
                 value={endTime}
-                onChange={(e) => setFormData((prev) => ({ ...prev, endTime: e.target.value }))}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, endTime: e.target.value }))
+                }
                 required
               />
-              <FaChevronDown className="time-icon" onClick={() => addHours(endTime, (value) => setFormData((prev) => ({ ...prev, endTime: value })))} />
+              <FaChevronDown
+                className="time-icon"
+                onClick={() =>
+                  addHours(endTime, (value) =>
+                    setFormData((prev) => ({ ...prev, endTime: value }))
+                  )
+                }
+              />
             </div>
           </div>
         </div>

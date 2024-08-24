@@ -1,6 +1,5 @@
-// src/components/Spinner.jsx
 import React from "react";
-import "../styles/spinner.css"; // Create a CSS file for spinner styling
+import "../styles/spinner.css";
 
 const Spinner = () => (
   <div className="spinner">
@@ -9,5 +8,3 @@ const Spinner = () => (
 );
 
 export default Spinner;
-
-

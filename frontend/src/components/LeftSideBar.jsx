@@ -1,16 +1,16 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { FaHome, FaUser, FaCog, FaSignOutAlt,FaPlus } from 'react-icons/fa';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { FaHome, FaUser, FaCog, FaSignOutAlt, FaPlus } from "react-icons/fa";
 import { FaCalendarCheck } from "react-icons/fa6";
-import { SiGoogletasks } from 'react-icons/si';
-import '../styles/leftSideBar.css';
-import Logo from '../assets/Logo.png'
+import { SiGoogletasks } from "react-icons/si";
+import "../styles/leftSideBar.css";
+import Logo from "../assets/Logo.png";
 
 const LeftSideBar = () => {
   return (
     <div className="sidebar">
-      <NavLink to={'/home'} className="logo">
-      <img src={Logo} alt="" />
+      <NavLink to={"/home"} className="logo">
+        <img src={Logo} alt="" />
       </NavLink>
       <div className="menu-icons">
         {[
@@ -24,7 +24,9 @@ const LeftSideBar = () => {
           <NavLink
             key={index}
             to={to}
-            className={({ isActive }) => `icon ${isActive ? 'active-icon' : ''}`}
+            className={({ isActive }) =>
+              `icon ${isActive ? "active-icon" : ""}`
+            }
           >
             {icon}
           </NavLink>
@@ -33,7 +35,7 @@ const LeftSideBar = () => {
       <div className="logout-icon">
         <NavLink
           to="/logout"
-          className={({ isActive }) => `icon ${isActive ? 'active-icon' : ''}`}
+          className={({ isActive }) => `icon ${isActive ? "active-icon" : ""}`}
         >
           <FaSignOutAlt />
         </NavLink>
