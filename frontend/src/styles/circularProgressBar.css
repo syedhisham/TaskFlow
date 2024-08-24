@@ -1,0 +1,52 @@
+/* src/styles/circularProgressBar.css */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  position: relative; /* Ensure the container is positioned relatively */
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle-bg {
+  stroke: #ADD8E6; /* Light blue color */
+  transition: stroke-dasharray 0.5s ease;
+}
+
+.progress-ring-circle {
+  stroke: #3498db; /* White circle */
+  transition: stroke-dasharray 0.5s ease;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-ring-circle-overlay {
+  transition: stroke-dashoffset 0.5s ease;
+  stroke-linecap: round;
+}
+
+.progress-percentage {
+  position: absolute; /* Position absolutely within the container */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the text */
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #333; /* Use color instead of fill for the <p> tag */
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+}
+
+
+
+.progress-ring-circle-bg {
+  stroke: #ADD8E6; /* Light blue color */
+  transition: stroke-dasharray 0.5s ease;
+}
+
+

@@ -1,0 +1,210 @@
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    /* For larger tablets and small desktops */
+    .cards-content{
+      margin-right: 14px;
+    }
+    .tasks-container {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust for medium-sized screens */
+    }
+    .scroll-up-button, .scroll-down-button{
+      display: none;
+    }
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap; /* Wrap to new lines */
+      gap: 10px;
+    }
+  
+    .filter-button {
+      flex: 1 1 23%; /* Adjust width */
+      max-width: 200px; /* Ensure buttons are not too wide */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    /* For tablets and smaller desktops */
+    .tasks-container {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Adjust for smaller screens */
+    }
+    .right-side-bar{
+      display: none;
+    }
+    .main-content {
+      justify-content: flex-start;
+    }
+    .cards-content{
+      width: 100%;
+      margin-right: 0;
+    }
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap; /* Wrap to new lines */
+      gap: 10px;
+    }
+  
+    .filter-button {
+      flex: 1 1 30%; /* Adjust width */
+      max-width: 180px; /* Ensure buttons are not too wide */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* For tablets and large phones */
+    .tasks-container {
+      grid-template-columns: 1fr; /* One card per row */
+    }
+  
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap; /* Wrap to new lines */
+      gap: 10px;
+    }
+  
+    .filter-button {
+      flex: 1 1 45%; /* Adjust width */
+      max-width: 160px; /* Ensure buttons are not too wide */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* For mobile phones */
+    .tasks-container {
+      grid-template-columns: 1fr; /* One card per row */
+    }
+  
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap; /* Wrap to new lines */
+      gap: 10px;
+    }
+  
+    .filter-button {
+      flex: 1 1 100%; /* Full width buttons */
+      max-width: 100%; /* Ensure buttons are full width */
+      font-size: 0.8rem; /* Adjust font size for small screens */
+    }
+  }
+  /* Navbar adjustments for screens smaller than 1200px */
+  @media (max-width: 1200px) {
+    .navbar {
+      padding: 10px 10px 15px 10px; /* Adjust padding for smaller screens */
+    }
+  
+    .search-bar {
+      width: 30rem; /* Adjust width */
+    }
+    .search-bar .search-icon {
+      display: none; /* Hide the search icon */
+    }
+  }
+  
+  /* Navbar adjustments for screens smaller than 992px */
+  @media (max-width: 992px) {
+    .navbar {
+      width: 100%; /* Adjust width to account for smaller sidebar */
+  
+      /* justify-content: space-between; */
+    }
+  
+    .search-bar {
+      width: calc(100% - 20rem); /* Full width for the search bar */
+      padding: 0 10px; /* Adjust padding */
+    }
+  
+    .search-bar input {
+      width: calc(100%); /* Adjust width for the input field */
+    }
+  
+    .search-bar .search-icon {
+      display: none; /* Hide the search icon */
+    }
+  
+    .create-task-button {
+      font-size: 0.875rem;
+    }
+  
+    .create-task-button .plus-icon{
+      font-size: 1.25rem; /* Smaller size for icons */
+    }
+  
+    .navbar-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+    }
+  }
+  
+  /* Navbar adjustments for screens smaller than 768px */
+  @media (max-width: 768px) {
+    .navbar {
+      width: 100%; /* Full width for the navbar */
+      /* padding: 10px 5px; Adjust padding */
+    }
+  
+    .search-bar {
+      width: 100%; /* Full width for the search bar */
+      padding: 0 5px; /* Adjust padding */
+    }
+  
+    .search-bar input {
+      width: calc(100% - 30px); /* Adjust width for the input field */
+      font-size: 0.75rem; /* Smaller font size */
+    }
+  
+    .create-task-button {
+      font-size: 0.75rem;
+      padding: 6px 12px;
+      margin: 5px;
+    }
+  
+    .create-task-button .plus-icon {
+      font-size: 1rem; /* Smaller size for icons */
+     
+    }
+    .create-task-button span{
+      display: none;
+    }
+  
+    .navbar-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Align items to the start */
+    }
+  }
+  /* Navbar adjustments for screens smaller than 520px */
+  
+  
+  /* Navbar adjustments for screens smaller than 480px */
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 8px 5px; /* Adjust padding */
+    }
+  
+    .search-bar {
+      width: calc(100% - 15rem); /* Full width for the search bar */
+      padding: 0 5px; /* Adjust padding */
+    }
+  
+    .search-bar input {
+      width: calc(100% - 30px); /* Adjust width for the input field */
+      font-size: 0.75rem; /* Smaller font size */
+    }
+  
+    .create-task-button {
+      font-size: 0.65rem;
+      padding: 4px 10px;
+    }
+  
+    .create-task-button .plus-icon{
+      font-size: 0.9rem; /* Smaller size for icons */
+    }
+  
+    .navbar-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Align items to the start */
+    }
+  }
+  

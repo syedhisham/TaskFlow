@@ -1,0 +1,71 @@
+/* Calendar Container Styling */
+.calendar-container {
+    height: 80vh;
+    margin: 50px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Removed transition and hover effect */
+}
+
+/* Calendar Custom Styling */
+.rbc-calendar {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+.rbc-day-bg + .rbc-day-bg {
+    border-left: 1px solid #ddd;
+    cursor: pointer;
+}
+.rbc-toolbar .rbc-toolbar-label {
+    flex-grow: 1;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.rbc-toolbar {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.rbc-toolbar button {
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.rbc-toolbar button:hover {
+    background-color: #2980b9;
+}
+
+.rbc-event {
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.rbc-event:hover {
+    transform: scale(1.05);
+}
+
+.rbc-month-view .rbc-header {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.rbc-today {
+    background-color: #eaf6ff !important;
+}

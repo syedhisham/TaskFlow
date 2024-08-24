@@ -1,0 +1,108 @@
+/* src/styles/completedTasks.css */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.completed-tasks-content {
+  background-color: rgb(202, 230, 254);
+  height: 95vh;
+}
+
+.completed-tasks-page {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.main-heading {
+  font-size: 2rem;
+  text-align: center;
+  background-color: #3498db;
+  color: white;
+  margin-bottom: 2rem;
+  padding: 10px;
+}
+
+.tasks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+/* src/styles/completedTasks.css */
+/* src/styles/completedTasks.css */
+
+.styled-card {
+  background-color: #ffffff; /* White background for the card */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Increased padding for more space */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition effects */
+  overflow: hidden; /* Ensure contents don't overflow */
+  height: 250px; /* Increased card height for better content fit */
+}
+
+.styled-card:hover {
+  transform: translateY(-4px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.task-card-header {
+  display: flex;
+  flex-direction: column; /* Stack header elements vertically */
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.task-name {
+  font-size: 1.25rem; /* Larger font size for task name */
+  color: #3498db; /* Darker text color for better readability */
+  font-weight: 600; /* Semi-bold font for emphasis */
+  margin-bottom: 10px; /* Space below the task name */
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+.task-card-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.task-delete-icon {
+  cursor: pointer;
+  color: #e57373; /* Red color for delete icon */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.task-delete-icon:hover {
+  color: #d32f2f; /* Darker red color on hover */
+}
+
+.task-category {
+  font-size: 0.875rem; /* Smaller font size for category */
+  padding: 4px 8px; /* Padding inside the button */
+  border-radius: 4px; /* Rounded corners for the button */
+  border: none;
+  cursor: default; /* Not clickable, just a display */
+  background-color: var(--category-background, #ffffff); /* Use a variable for background color */
+  color: var(--category-text, #ffffff); /* Use a variable for text color */
+}
+
+.task-date-time {
+  font-size: 0.875rem; /* Smaller font size for date and time */
+  color: #666; /* Medium gray color for less emphasis */
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+.task-description {
+  font-size: 1rem; /* Standard font size for description */
+  color: #444; /* Slightly lighter gray for description */
+  line-height: 1.5; /* Increased line height for readability */
+  margin-top: 12px;
+  margin-left: 10px;
+}

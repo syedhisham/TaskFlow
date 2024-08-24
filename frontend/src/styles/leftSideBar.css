@@ -1,0 +1,58 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding and borders are included in element's total width and height */
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 80px;
+    height: 100vh;
+    background-color: rgb(2, 2, 86);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo */
+  .logo {
+    margin-top: 20px;
+  }
+  /* .logo img{
+    height: 7rem;
+  } */
+  
+  /* Menu Icons Container */
+  .menu-icons,
+  .logout-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+   
+  /* General Icon Styles */
+  .icon {
+    color: white;
+    font-size: 24px;
+    margin: 10px 0;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Active Icon Styles */
+  .active-icon {
+    background-color: #003366; /* Light background color */
+  }
+  
+  /* Logout Icon */
+  .logout-icon {
+    margin-bottom: 20px;
+  }
+  

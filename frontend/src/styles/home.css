@@ -1,0 +1,291 @@
+/* Existing styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure padding and borders are included in element's total width and height */
+}
+
+.home-page {
+  display: flex;
+  height: 100vh;
+  background-color: rgb(202, 230, 254);
+  scroll-behavior: smooth;
+}
+
+/* Top Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px 15px 15px;
+}
+
+.search-bar {
+  position: relative;
+  width: 40rem;
+  border: none;
+  outline: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+.search-bar input {
+  width: 38rem;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1rem;
+}
+.task-card.highlight {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.create-task-button {
+  display: flex;
+  align-items: center;
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.create-task-button .plus-icon {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+.create-task-button span {
+  font-size: 0.9rem;
+}
+
+
+/* Content */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+.main-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+.cards-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 75%;
+  padding: 20px;
+  border-radius: 20px;
+}
+.filter-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.filter-button {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.filter-button.active {
+  background: #3498db;
+  color: white;
+}
+
+.tasks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-height: 74vh;
+  overflow-y: auto;
+  padding-right: 10px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.tasks-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scroll buttons */
+.scroll-down-button {
+  position: fixed;
+  bottom: 3rem;
+  left: 40%;
+  transform: translateX(-50%);
+  background: transparent;
+  color: #3498db;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+  animation: bounce 2s infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-down-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframes for bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Task card styles */
+.task-card {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #333;
+  overflow: hidden;
+  height: 250px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.task-card .task-menu-icon {
+  font-size: 1rem;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  cursor: pointer;
+  color: #666;
+}
+
+.complete-button {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-delete-icon {
+  font-size: 0.9rem;
+  color: #666;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.task-edit-icon {
+  font-size: 1rem;
+  color: #666;
+  position: absolute;
+  bottom: 10px;
+  right: 31px;
+  cursor: pointer;
+}
+
+.task-card .task-name {
+  font-size: 1.5rem;
+  color: #3498db;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 25px;
+  text-decoration: underline;
+}
+
+.task-card .task-category {
+  background-color: #3498db;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.task-category {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: white;
+  cursor: default;
+}
+
+.task-card .task-date {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.task-card .task-time {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.task-card .task-description {
+  font-size: 0.9rem;
+  color: #444;
+}
+.task-card.deleting {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    border: 2px dotted transparent;
+  }
+  50% {
+    opacity: 0.5;
+    border: 2px dotted rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    opacity: 0;
+    /* border: 2px dotted rgba(0, 0, 0, 0); */
+    height: 0;
+    padding: 0;
+    margin: 0;
+  }
+}
+
